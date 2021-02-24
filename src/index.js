@@ -2,7 +2,7 @@ import React from 'react';
 import { render } from 'react-dom';
 import App from './components/App'
 
-import './styles/bootstrap.min.css';
+import './index.css';
 
 render(
   <App />,
