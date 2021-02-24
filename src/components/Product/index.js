@@ -1,7 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 function Product(props) {
   const { product } = props;
+
+  useEffect(() => {
+    console.log('El componente se ha rendereado')
+    return () => {
+      console.log('El componente ha sido removido')
+    }
+  }, [])
+
   return <div className="mb-5">
     <figure className="mb-3">
       <img src={product.image.url} alt="" />
