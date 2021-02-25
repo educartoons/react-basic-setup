@@ -5,15 +5,22 @@ import Product from '../Product';
 import { data } from './data';
 
 
-function Products() {
+function Products(props) {
   const [products, setProducts] = useState([]);
 
   // First time the component is rendered
   useEffect(() => {
     setTimeout(() => {
-      setProducts(data.products);
-    }, 1000);
-  }, [])
+      if (props.type === 'new') {
+        const newProducts = data.products.filter((product) => product.exclusive === true)
+        setProducts(newProducts);
+      } else {
+        setProducts(data.products);
+      }
+
+    }, 200);
+  }, [props.type])
+
 
   return (
     <div>

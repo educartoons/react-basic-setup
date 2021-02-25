@@ -15,8 +15,8 @@ function Header() {
         <div>
           <nav className="">
             <ul className="flex list-none gap-5">
-              <li><Link to="/products">Nuevos Lanzamientos</Link></li>
-              <li><a href="#">Hombre</a></li>
+              <li><Link to="/products/new">Nuevos Lanzamientos</Link></li>
+              <li><Link to="/products/men">Hombre</Link></li>
               <li><a href="#">Mujer</a></li>
               <li><a href="#">Niño/a</a></li>
               <li><a href="#">Rebajas</a></li>
