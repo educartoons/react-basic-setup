@@ -1,14 +1,23 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 function Product(props) {
   const { product } = props;
+  const [number, setNumber] = useState(0);
 
   useEffect(() => {
-    console.log('El componente se ha rendereado')
+    console.log('Esto se ejecuta por solo una ves luego de ser rendereado');
     return () => {
       console.log('El componente ha sido removido')
     }
   }, [])
+
+  useEffect(() => {
+    console.log('Esto se ejecutara solo si el valor de product cambia');
+  }, [product])
+
+  useEffect(() => {
+    console.log('Esto se ejecuta solo cuando el numero cambia');
+  }, [number])
 
   return <div className="mb-5">
     <figure className="mb-3">
@@ -23,6 +32,7 @@ function Product(props) {
     }
     <p className="text-gray-400">{product.colors.length} color</p>
     <p className="mt-5">${product.price}</p>
+    <input className="bg-red-200" type="text" value={number} onChange={(e) => setNumber(e.target.value)} />
   </div>
 }
 

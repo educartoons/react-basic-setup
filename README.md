@@ -11,6 +11,10 @@
 # DAY 2 
 
 - [x] using tailwind with create-react-app
+- [x] use useEffect in order to handle life cycles of a component
+
+# DAY 3
+- [x] Life cycles of Functional, and Class components
 
 First run the next lines in your console
 ```

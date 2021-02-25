@@ -18,9 +18,12 @@ function Products() {
 
   // This functions is executed when number changes
   useEffect(() => {
-    setTimeout(() => {
-      setProducts(data.products.slice(0, number));
-    }, 1000);
+    if (number < 200) {
+      setTimeout(() => {
+        number = number + 6;
+        setProducts(data.products.slice(0, number));
+      }, 1000);
+    }
   }, [number])
 
   const handleInput = (e) => {
