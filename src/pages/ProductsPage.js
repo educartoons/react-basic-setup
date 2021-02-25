@@ -1,7 +1,10 @@
 import React from 'react';
+import Products from '../components/Products';
 
 function ProductsPage() {
-  return <h1>Este es la pagina de productos</h1>
+  return <div className="px-6">
+    <Products />
+  </div>
 }
 
 export default ProductsPage;

@@ -15,6 +15,7 @@
 
 # DAY 3
 - [x] Life cycles of Functional, and Class components
+- [x] Managing routes with react-router-dom
 
 First run the next lines in your console
 ```
