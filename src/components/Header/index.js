@@ -1,17 +1,26 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
+import { isAuthenticated, signOut } from '../../auth'
 
 import { ReactComponent as NikeLogotype } from '../../images/nike.svg'
 
 function Header() {
+  const history = useHistory();
   return <header>
     <div className="container">
       <div className="bg-gray-100 flex justify-end">
         <nav className="pr-6">
           <ul className="flex h-8 items-center  list-none gap-5">
+            {isAuthenticated() && <li className="text-xs"><Link to="/admin">Admin</Link></li>}
             <li className="text-xs"><Link to="/signin">Ayuda</Link></li>
             <li className="text-xs"><Link to="/signin">Unete</Link></li>
-            <li className="text-xs"><Link to="/signin">Iniciar sesion</Link></li>
+            {
+              isAuthenticated() ? <li onClick={function () {
+                signOut(() => {
+                  history.push('/');
+                })
+              }} className="text-xs cursor-pointer">Cerrar sesión</li> : <li className="text-xs"><Link to="/signin">Iniciar sesion</Link></li>
+            }
           </ul>
         </nav>
       </div>

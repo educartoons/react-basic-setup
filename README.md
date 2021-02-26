@@ -23,16 +23,17 @@
 
 - [x] Create 404 Page for Routes
 - [x] Template component for Pages
+- [x] Simple Authentication with Cookies
+- [x] Added Sign up Page
+- [x] Protect Pages using Private Route Component
 
-# DAY 4
-- [ ] Protect Routes
-- [ ] Produts Details
-- [ ] Performing http-requests using Axios
-- [ ] Code splitting
-- [ ] Authentication with Google/Facebook/Twitter
+Offtopic 
+- [x] Destructuring Objects
 
-# DAY 
+# DAY 5
 - [ ] Error boundaries
+- [ ] Deploying React projects
+- [ ] Authentication using Firebase service
 
 First run the next lines in your console
 ```
