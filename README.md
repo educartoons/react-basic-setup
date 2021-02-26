@@ -16,6 +16,18 @@
 # DAY 3
 - [x] Life cycles of Functional, and Class components
 - [x] Managing routes with react-router-dom
+- [x] Passing parameters from Links to Router Components
+- [x] Get parameters in Router Funtional Components using useParams
+
+# DAY 4
+- [ ] Protect Routes
+- [ ] Produts Details
+- [ ] Performing http-requests using Axios
+- [ ] Code splitting
+- [ ] Authentication with Google/Facebook/Twitter
+
+# DAY 
+- [ ] Error boundaries
 
 First run the next lines in your console
 ```
