@@ -1,13 +1,14 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import Products from '../components/Products';
+import Template from '../components/Template';
 
 function ProductsPage() {
   let { type } = useParams();
-  console.log(type);
-  return <div className="px-6">
-    <Products type={type} />
-  </div>
+  return (
+    <Template children={<Products type={type} />} />
+  )
+
 }
 
 export default ProductsPage;

@@ -31,6 +31,7 @@ function Products(props) {
         {
           products.map((product, index) => <Product key={index} product={product} />)
         }
+
       </div>
     </div>
   )
