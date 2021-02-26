@@ -6,6 +6,15 @@ import { ReactComponent as NikeLogotype } from '../../images/nike.svg'
 function Header() {
   return <header>
     <div className="container">
+      <div className="bg-gray-100 flex justify-end">
+        <nav className="pr-6">
+          <ul className="flex h-8 items-center  list-none gap-5">
+            <li className="text-xs"><Link to="/signin">Ayuda</Link></li>
+            <li className="text-xs"><Link to="/signin">Unete</Link></li>
+            <li className="text-xs"><Link to="/signin">Iniciar sesion</Link></li>
+          </ul>
+        </nav>
+      </div>
       <div className="flex items-center justify-between px-6">
         <div>
           <Link to="/">

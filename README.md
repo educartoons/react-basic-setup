@@ -19,6 +19,11 @@
 - [x] Passing parameters from Links to Router Components
 - [x] Get parameters in Router Funtional Components using useParams
 
+# Day 4
+
+- [x] Create 404 Page for Routes
+- [x] Template component for Pages
+
 # DAY 4
 - [ ] Protect Routes
 - [ ] Produts Details
