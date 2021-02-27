@@ -7,6 +7,7 @@ function ProductsPage() {
   let { type } = useParams();
   return (
     <Template children={<Products type={type} />} />
+
   )
 
 }

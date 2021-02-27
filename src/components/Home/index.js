@@ -3,7 +3,7 @@ import HeroNike from '../../images/hero-1.jpg';
 
 function Home() {
   return (
-    <div className="container">
+    <div className="container mx-auto">
       <section>
         <img src={HeroNike} alt="Hero Nike" />
       </section>

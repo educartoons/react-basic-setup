@@ -16,6 +16,7 @@ function Products(props) {
         setProducts(newProducts);
       } else {
         setProducts(data.products);
+
       }
 
     }, 200);

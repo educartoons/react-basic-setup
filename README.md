@@ -32,9 +32,8 @@ Offtopic
 
 # DAY 5
 - [x] Adding CSS classes based on mobile first metodology (RWD)
-- [ ] Deploying React projects
-- [ ] Error boundaries
-- [ ] Authentication using Firebase service
+- [x] Deploying React projects
+- [x] Error boundaries
 
 
 First run the next lines in your console
