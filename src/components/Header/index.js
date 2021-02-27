@@ -52,10 +52,10 @@ function Header() {
             <ul className="flex flex-col list-none gap-5 text-xl font-medium md:flex-row md:text-sm">
               <li><Link to="/products/new">Nuevos Lanzamientos</Link></li>
               <li><Link to="/products/men">Hombre</Link></li>
-              <li><a href="#">Mujer</a></li>
-              <li><a href="#">Niño/a</a></li>
-              <li><a href="#">Rebajas</a></li>
-              <li><a href="#">SNKRS</a></li>
+              <li><a href="/">Mujer</a></li>
+              <li><a href="/">Niño/a</a></li>
+              <li><a href="/">Rebajas</a></li>
+              <li><a href="/">SNKRS</a></li>
             </ul>
             {
               className === 'block' && <Link to="/signin" className="border inline-block rounded-2xl mt-8 px-4 py-1">Iniciar sesión</Link>
