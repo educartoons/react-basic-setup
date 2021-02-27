@@ -23,8 +23,8 @@ function Products(props) {
 
 
   return (
-    <div>
-      <div className="grid grid-cols-3 gap-4">
+    <div className="container mx-auto">
+      <div className="grid grid-cols-1 px-4 sm:grid-cols-2 md:grid-cols-3 md:px-0 lg:grid-cols-4 gap-4">
         {
           products.length === 0 ? <p>Loading producsts...</p> : ''
         }

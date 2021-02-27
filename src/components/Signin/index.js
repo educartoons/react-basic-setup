@@ -22,9 +22,9 @@ function Signin() {
     history.push('/');
   }
 
-  return <div className="container">
+  return <div className="container mx-auto">
     <div className="flex items-center justify-center h-screen">
-      <div className="w-1/4">
+      <div className="w-full px-6 sm:w-2/4 sm:px-0 md:px-0 md:w-1/4">
         <div className="text-center">
           <NikeLogotype className="inline" />
         </div>

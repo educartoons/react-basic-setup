@@ -31,9 +31,11 @@ Offtopic
 - [x] Destructuring Objects
 
 # DAY 5
-- [ ] Error boundaries
+- [x] Adding CSS classes based on mobile first metodology (RWD)
 - [ ] Deploying React projects
+- [ ] Error boundaries
 - [ ] Authentication using Firebase service
+
 
 First run the next lines in your console
 ```
