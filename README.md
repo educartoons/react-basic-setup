@@ -42,3 +42,9 @@ npm install -D tailwindcss@npm:@tailwindcss/postcss7-compat @tailwindcss/postcss
 
 npm install @craco/craco
 ```
+
+Delete sessions/proccess from PORTS
+
+```
+npx kill-port 3000
+```

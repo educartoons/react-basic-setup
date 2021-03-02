@@ -1,26 +1,26 @@
 import React, { useState, useEffect } from 'react';
+import { firestore } from '../../firebase';
+import { collectIdsAndDocs } from '../../utils';
 
 import Product from '../Product';
-
-import { data } from './data';
 
 
 function Products(props) {
   const [products, setProducts] = useState([]);
 
-  // First time the component is rendered
+  async function getProducts() {
+    const snapshot = await firestore.collection('products').get();
+
+    const productsFromDB = snapshot.docs.map(collectIdsAndDocs);
+
+    setProducts(productsFromDB);
+  }
+
   useEffect(() => {
-    setTimeout(() => {
-      if (props.type === 'new') {
-        const newProducts = data.products.filter((product) => product.exclusive === true)
-        setProducts(newProducts);
-      } else {
-        setProducts(data.products);
 
-      }
+    getProducts();
 
-    }, 200);
-  }, [props.type])
+  }, [])
 
 
   return (

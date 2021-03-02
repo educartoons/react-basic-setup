@@ -4,7 +4,6 @@ import { ErrorBoundary } from 'react-error-boundary';
 import Routes from '../../routes';
 import ErrorFallback from '../ErrorFallback'
 
-
 function App() {
   return (
     <ErrorBoundary FallbackComponent={ErrorFallback}>
@@ -12,7 +11,6 @@ function App() {
         <Routes />
       </BrowserRouter>
     </ErrorBoundary>
-
   )
 }
 
