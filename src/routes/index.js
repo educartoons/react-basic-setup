@@ -5,6 +5,7 @@ import ProductsPage from '../pages/ProductsPage';
 import SignInPage from '../pages/SignInPage';
 import NotFoundPage from '../pages/NotFoundPage';
 import AdminPage from '../pages/AdminPage';
+import AddProductPage from '../pages/AddProductPage';
 
 import PrivateRoute from '../auth/PrivateRoute'
 
@@ -14,6 +15,7 @@ function Routes() {
       <Route exact path="/" component={HomePage} />
       <Route path="/products/:type" component={ProductsPage} />
       <Route path="/signin" component={SignInPage} />
+      <Route path="/add-product" component={AddProductPage} />
       <PrivateRoute path="/admin" component={AdminPage} />
       <Route path="*" component={NotFoundPage} />
     </Switch>

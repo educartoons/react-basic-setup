@@ -14,7 +14,7 @@ function Product(props) {
     {
       product.gender === 'man' ? <p className="font-light text-gray-400">Calzado de carrera para hombre</p> : <p className="font-light text-gray-400">Calzado de carrera para mujer</p>
     }
-    <p className="text-gray-400">{product.colors.length} color</p>
+    <p className="text-gray-400">{product.colors?.length} color</p>
     <p className="mt-5">${product.price}</p>
   </div>
 }
