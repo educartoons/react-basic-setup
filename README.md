@@ -35,6 +35,11 @@ Offtopic
 - [x] Deploying React projects
 - [x] Error boundaries
 
+# DAY 6
+- [x] Setting up Firebase
+- [x] Getting docs from collection (firestore)
+- [x] Adding docs to collection (firestore);
+
 
 First run the next lines in your console
 ```
