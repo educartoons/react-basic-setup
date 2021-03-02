@@ -53,3 +53,16 @@ Delete sessions/proccess from PORTS
 ```
 npx kill-port 3000
 ```
+
+## Installation 
+
+Add .env.development file in your root folder with the next firebase keys
+
+```
+REACT_APP_FIREBASE_APIKEY = 
+REACT_APP_FIREBASE_AUTH_DOMAIN = 
+REACT_APP_FIREBASE_PROJECT_ID = 
+REACT_APP_FIREBASE_STORAGE_BUCKET = 
+REACT_APP_FIREBASE_MESSANGING_SENDER_ID = 
+REACT_APP_FIREBASE_APP_ID = 
+```
