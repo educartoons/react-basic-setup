@@ -1,13 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import axios from 'axios'
+
 import { firestore } from '../../firebase';
 import useInput from './useInput';
 import useDropdown from './useDropdown'
 import { ReactComponent as NikeLogotype } from '../../images/nike.svg'
 
+const CLOUDINARY_URL = `https://api.cloudinary.com/v1_1/${process.env.REACT_APP_CLOUDINARY_CLOUD_NAME}/image/upload`
+
 function AddProduct() {
   const [saving, setSaving] = useState(false);
   const [description, setDescription] = useState('');
+  const [file, setFile] = useState(null);
   const [InputName, name] = useInput('', 'name', 'Nombre del producto');
   const [InputPrice, price] = useInput(0, 'price', 'Precio del producto');
   const [InputColors, colors] = useInput('', 'colors', 'Add colors separated by comma');
@@ -23,6 +28,18 @@ function AddProduct() {
 
   const handleSendProduct = async () => {
     setSaving(true);
+
+    const formData = new FormData();
+    formData.append('file', file);
+    formData.append('tags', 'image of nike');
+    formData.append('upload_preset', 'sneakers');
+    formData.append('api_key', process.env.REACT_APP_CLOUDINARY_API_KEY);
+    formData.append("timestamp", (Date.now() / 1000) | 0);
+
+    const response = await axios.post(CLOUDINARY_URL, formData, {
+      headers: { "X-Requested-With": "XMLHttpRequest" }
+    });
+
     const docRef = await firestore.collection('products').add({
       name: name,
       price: price,
@@ -31,12 +48,19 @@ function AddProduct() {
       gender: gender,
       available: Boolean(available),
       description: description,
+      featuredImage: response.data.url,
     });
+
+
 
     setSaving(false);
 
     history.push('/products/new');
 
+  }
+
+  const handleChangeFile = (e) => {
+    setFile(e.target.files[0]);
   }
 
 
@@ -50,6 +74,11 @@ function AddProduct() {
         {InputName}
         {InputPrice}
         {InputColors}
+
+        <div>
+          <input onChange={handleChangeFile} type="file" name="" id="" />
+        </div>
+
         {DropdownExclusive}
         {DropdownGender}
         {DropdownAvailable}
