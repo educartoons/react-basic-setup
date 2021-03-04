@@ -61,11 +61,12 @@ function AddProduct() {
 
   const handleChangeFile = (e) => {
     setFile(e.target.files[0]);
+    console.log(e.target.files[0]);
   }
 
 
   return <div className="container mx-auto">
-    <div className="flex items-center justify-center h-screen">
+    <div className="flex items-center justify-center">
       <div className="w-full px-6 sm:w-2/4 sm:px-0 md:px-0 md:w-1/4">
         <div className="text-center">
           <NikeLogotype className="inline" />
@@ -77,6 +78,12 @@ function AddProduct() {
 
         <div>
           <input onChange={handleChangeFile} type="file" name="" id="" />
+          {
+            file !== null && <figure>
+              <img src={URL.createObjectURL(file)} alt="" />
+            </figure>
+          }
+
         </div>
 
         {DropdownExclusive}
