@@ -39,6 +39,13 @@ Offtopic
 - [x] Setting up Firebase
 - [x] Getting docs from collection (firestore)
 - [x] Adding docs to collection (firestore);
+- [x] creating custom hooks
+
+# DAY 7
+
+- [x] Uploading images to CDNs (axios)
+- [x] creating custom hooks
+- [x] authentication with email/password - facebook - google
 
 
 First run the next lines in your console

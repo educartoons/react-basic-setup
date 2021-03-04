@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { firestore } from '../../firebase';
 import useInput from './useInput';
@@ -10,6 +10,10 @@ function AddProduct() {
   const [InputPrice, price] = useInput(0, 'price', 'Precio del producto');
 
   const history = useHistory();
+
+  useEffect(() => {
+    console.log('once');
+  }, []);
 
 
   const handleSendProduct = async () => {
@@ -32,8 +36,8 @@ function AddProduct() {
           <NikeLogotype className="inline" />
         </div>
         <h3 className="font-bold text-center mb-5">AGREGA UN NUEVO PRODUCTO</h3>
-        <InputName />
-        <InputPrice />
+        {InputName}
+        {InputPrice}
         <textarea onChange={(e) => setDescription(e.target.value)} onBlur={(e) => setDescription(e.target.value)} placeholder="Descripcion" value={description} className="border border-gray-300 font-light h-32 rounded-sm text-sm p-2  w-full px-2" />
         <button onClick={handleSendProduct} className="mt-3 block w-100 bg-gray-900 h-8  text-sm text-white rounded-sm text-center w-full">Agregar</button>
       </div>
