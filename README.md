@@ -45,6 +45,10 @@ Offtopic
 
 - [x] Uploading images to CDNs (axios)
 - [x] creating custom hooks
+
+# DAY 8 
+- [x] Uploading multiple images to Cloudinary
+- [x] Creating Product Single View based on id
 - [x] authentication with email/password - facebook - google
 
 
