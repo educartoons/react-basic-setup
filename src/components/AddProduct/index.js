@@ -63,7 +63,7 @@ function AddProduct() {
     const featuredImage = (await uploadImages([file]))[0];
     const images = await uploadImages(files);
 
-    const docRef = await firestore.collection('products').add({
+    await firestore.collection('products').add({
       name: name,
       price: Number(price),
       colors: colors.split(',').map(color => color.trim()),
