@@ -27,7 +27,7 @@ function Header() {
           <ul className="flex h-8 items-center  list-none gap-5">
             {currentUser && <li className="text-xs"><Link to="/add-product">Add Product</Link></li>}
             <li className="text-xs"><Link to="/signin">Ayuda</Link></li>
-
+            {!currentUser && <li className="text-xs"><Link to="/signup">Sign in</Link></li>}
             {currentUser ? <li onClick={signOut} className="text-xs cursor-pointer">Cerrar sesión</li> : <li className="text-xs"><Link to="/signin">Iniciar sesion</Link></li>}
 
           </ul>
