@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
+
+import { signInWithGoogle } from '../../firebase';
 import { ReactComponent as NikeLogotype } from '../../images/nike.svg'
 
 function Signin() {
@@ -22,6 +24,10 @@ function Signin() {
     history.push('/');
   }
 
+  const redirectToHome = () => {
+    history.push('/');
+  }
+
   return <div className="container mx-auto">
     <div className="flex items-center justify-center h-screen">
       <div className="w-full px-6 sm:w-2/4 sm:px-0 md:px-0 md:w-1/4">
@@ -36,6 +42,8 @@ function Signin() {
           <input onChange={handlePassword} onBlur={handlePassword} value={password} placeholder="Contraseña" className="border border-gray-300 font-light h-8 rounded-sm text-sm  w-full px-2" type="password" />
         </label>
         <button onClick={handleSignin} className="mt-3 block w-100 bg-gray-900 h-8  text-sm text-white rounded-sm text-center w-full">Iniciar sesión</button>
+
+        <button onClick={() => signInWithGoogle(redirectToHome)} className="mt-3 block w-100 bg-gray-900 h-8  text-sm text-white rounded-sm text-center w-full">Iniciar sesión con Google</button>
       </div>
     </div>
   </div>

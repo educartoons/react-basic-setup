@@ -17,7 +17,7 @@ function Routes() {
       <Route path="/products/:type" component={ProductsPages} />
       <Route path="/product/:id" component={ProductPage} />
       <Route path="/signin" component={SignInPage} />
-      <Route path="/add-product" component={AddProductPage} />
+      <PrivateRoute path="/add-product" component={AddProductPage} />
       <PrivateRoute path="/admin" component={AdminPage} />
       <Route path="*" component={NotFoundPage} />
     </Switch>

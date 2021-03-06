@@ -49,7 +49,17 @@ Offtopic
 # DAY 8 
 - [x] Uploading multiple images to Cloudinary
 - [x] Creating Product Single View based on id
-- [x] authentication with email/password - facebook - google
+
+# DAY 9 
+- [x] authentication with email/password - google
+- [x] 
+
+# DAY 10
+- [x] Configuration of ESLint
+- [x] Context 
+- [x] Component Testing
+
+# DAY 11
 
 
 First run the next lines in your console
@@ -76,4 +86,16 @@ REACT_APP_FIREBASE_PROJECT_ID =
 REACT_APP_FIREBASE_STORAGE_BUCKET = 
 REACT_APP_FIREBASE_MESSANGING_SENDER_ID = 
 REACT_APP_FIREBASE_APP_ID = 
+```
+
+## Log in to Firebaser service 
+
+```
+npm i -g firebase-tools firebase-admin
+```
+
+Then run the next lines in the terminal
+
+```
+firebase login
 ```
