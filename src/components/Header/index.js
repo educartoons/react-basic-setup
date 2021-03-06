@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
-import { Link, useHistory } from 'react-router-dom';
-import { isAuthenticated } from '../../auth'
+import React, { useState, useContext } from 'react';
+import { Link } from 'react-router-dom';
+
+import { UserContext } from '../../provider/UserProvider';
 import { signOut } from '../../firebase';
 
 import { ReactComponent as NikeLogotype } from '../../images/nike.svg'
@@ -9,7 +10,7 @@ import { ReactComponent as MenuIcon } from '../../images/menu.svg'
 
 function Header() {
   const [className, setClassName] = useState('hidden');
-  const history = useHistory();
+  const currentUser = useContext(UserContext);
 
   const switchNavigation = () => {
     if (className === 'hidden') {
@@ -24,13 +25,11 @@ function Header() {
       <div className="hidden md:flex bg-gray-100 justify-end">
         <nav className="pr-6">
           <ul className="flex h-8 items-center  list-none gap-5">
-            {isAuthenticated() && <li className="text-xs"><Link to="/add-product">Add Product</Link></li>}
-            {isAuthenticated() && <li className="text-xs"><Link to="/admin">Admin</Link></li>}
+            {currentUser && <li className="text-xs"><Link to="/add-product">Add Product</Link></li>}
             <li className="text-xs"><Link to="/signin">Ayuda</Link></li>
-            <li className="text-xs"><Link to="/signin">Unete</Link></li>
-            {
-              isAuthenticated() ? <li onClick={signOut} className="text-xs cursor-pointer">Cerrar sesión</li> : <li className="text-xs"><Link to="/signin">Iniciar sesion</Link></li>
-            }
+
+            {currentUser ? <li onClick={signOut} className="text-xs cursor-pointer">Cerrar sesión</li> : <li className="text-xs"><Link to="/signin">Iniciar sesion</Link></li>}
+
           </ul>
         </nav>
       </div>

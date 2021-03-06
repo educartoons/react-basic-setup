@@ -52,7 +52,8 @@ Offtopic
 
 # DAY 9 
 - [x] authentication with email/password - google
-- [x] 
+- [x] Creating Context with createContext
+- [x] Using useContext
 
 # DAY 10
 - [x] Configuration of ESLint

@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Route, Redirect } from 'react-router-dom';
-import { isAuthenticated } from './index';
+import { UserContext } from '../provider/UserProvider'
 
 function PrivateRoute({ component: Component, ...rest }) {
-  if (isAuthenticated()) {
+  const currentUser = useContext(UserContext);
+  if (currentUser !== null) {
     return <Route {...rest} render={Component} />
   } else {
     return <Redirect to="/" />

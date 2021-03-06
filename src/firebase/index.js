@@ -34,4 +34,44 @@ export const signOut = () => auth.signOut();
 
 window.firebase = firebase;
 
+export const createUserProfileDocument = async (user, additionalData) => {
+  if (!user) return;
+
+  // Get a reference to the place in the database where a user profile might be
+  const useRef = firestore.doc(`users/${user.uid}`);
+
+  const snapshot = await useRef.get();
+
+  if (!snapshot.exists) {
+    const { displayName, email, photoURL } = user;
+    const createdAt = new Date();
+    try {
+      await useRef.set({
+        displayName,
+        email,
+        photoURL,
+        createdAt,
+        ...additionalData,
+      });
+    } catch (error) {
+      console.log('Error creating user', error.message);
+    }
+  }
+  return getUserDocument(user.uid);
+}
+
+async function getUserDocument(uid) {
+  if (!uid) return;
+  try {
+    const userDocument = await firestore.collection('users').doc(uid).get();
+    return {
+      uid,
+      ...userDocument.data()
+    }
+  } catch (error) {
+    console.log('Error fetching user', error.message);
+  }
+
+}
+
 export default firebase;
