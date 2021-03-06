@@ -20,13 +20,7 @@ export const auth = firebase.auth();
 
 export const provider = new firebase.auth.GoogleAuthProvider();
 export const signInWithGoogle = async (fn) => {
-  const user = await auth.signInWithPopup(provider);
-  const newUser = {
-    displayName: user.user.displayName,
-    email: user.user.email,
-    photo: user.user.photoURL
-  }
-  localStorage.setItem('user', JSON.stringify(newUser));
+  await auth.signInWithPopup(provider);
   fn();
 };
 
